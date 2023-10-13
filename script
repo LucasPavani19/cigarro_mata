@@ -1,0 +1,36 @@
+programa
+{
+	inclua biblioteca Matematica
+ --> mat
+	
+	funcao inicio()
+	{
+		    real anos, cigarros_dia, cigarros_ano, minutos_ao_dia, vidaanualperdida, totalperdido_anos, totaldias_perdidos, totalperdido_anos_arredondado
+		    real valor_gasto
+		    escreva("\n---------- PARE DE FUMAR ----------")
+		    escreva("\nCada cigarro reduz 10 minutos de vida")
+		    escreva("\n-----------------------------------")
+		    escreva("\nHá quantos anos você fuma? ") 
+		    leia(anos)
+		    escreva("Quantos cigarros você fuma por dia? ")
+		    leia(cigarros_dia)
+		    escreva("-----------------------------------")
+		    minutos_ao_dia  = (cigarros_dia * 10) // Saber quantos minutos foram perdidos ao dia 
+		    cigarros_ano = (cigarros_dia * (365 * anos)) // Saber quantos cigarros foram fumados ao ano 
+		    vidaanualperdida = (minutos_ao_dia * 365)	// Saber quantos minutos ao ano foram perdidos 
+		    totalperdido_anos = (vidaanualperdida * anos) // Aqui teremos a quantidade de anos perdidos 
+		    totaldias_perdidos = mat.arredondar((totalperdido_anos / 1440), 2) // Qnt de anos perdidos divido pela qnt de minutos em 1 dia
+		    valor_gasto = mat.arredondar((cigarros_ano * 0.35), 2)
+	
+		
+		    escreva("\nAo todo, você já fumou " + cigarros_ano + " cigarros")
+		
+		
+		    totalperdido_anos_arredondado = (totaldias_perdidos / 365) // Linha somente para arredondar o valor de dias perdidos 
+		    totalperdido_anos_arredondado = mat.arredondar(totalperdido_anos_arredondado, 2) // Linha somente para arredondar o valor de dias perdidos 
+		    escreva("\nVocê já perdeu " + totalperdido_anos_arredondado + " anos")
+		    escreva("\nEstima-se que você já perdeu " + totaldias_perdidos + " dias por conta do cigarro") 
+		    escreva("\nEm 2023, a média do preço de cada cigarro é de 0.35 centavos. Ou seja, você gastou, ao todo R$ " + (valor_gasto))
+		
+	}
+}
